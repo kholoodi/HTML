@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Maps</title>
+    </head>
+    <body>
+        
+       <h1>========== Google Maps ===========</h1>
+       <!-- https://www.googlemapsgenerator.com/en/-->
+       <div style="width: 700px;position: relative;">
+            <iframe width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Saudi%20Arabia+(Saudi%20Arabia)&amp;ie=UTF8&amp;t=&amp;z=10&amp;iwloc=B&amp;output=embed"
+                frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+            </iframe>
+            <div style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;">
+                <small style="line-height: 1.8;font-size: 2px;background: #fff;">Powered by 
+                    <a href="http://www.googlemapsgenerator.com/ja/">gmapgen jp</a> & <a href="https://nouc.se/lan-utan-uc/decidas/">lån med decidas</a>
+                </small>
+            </div>
+            <style>
+            #gmap_canvas img{max-width:none!important;background:none!important}
+            </style>
+        </div>
+        <br />
+        <br/>
+        <h1>=====================================</h1>
+        <h1>======== Bing Maps ===================</h1>
+        <!--https://bingmapsgenerator.github.io/-->
+        <div style="height:400px;width:600px;">
+            <div id="bing-map" style="width: 100%; height: 100%;">
+            </div></div>
+            <script>
+            function loadMap(){var map = new Microsoft.Maps.Map(document.getElementById("bing-map"),
+             {zoom: 13,mapTypeId: Microsoft.Maps.MapTypeId.road});Microsoft.Maps.loadModule("Microsoft.Maps.Search", 
+             function () {var searchManager = new Microsoft.Maps.Search.SearchManager(map);
+             var requestOptions = {bounds: map.getBounds(),where: "saudi aradia ",callback: 
+             function (answer, userData) 
+             {map.setView({ center: new Microsoft.Maps.Location(answer.results[0].location.latitude, answer.results[0].location.longitude) });
+             map.entities.push(new Microsoft.Maps.Pushpin(answer.results[0].location));}};
+             searchManager.geocode(requestOptions);});}
+             </script>
+             <script type="text/javascript" 
+             src="https://www.bing.com/api/maps/mapcontrol?key=AkLj1p_g1w7lFb8lJZ-XnicObnu2-ydEpmn6eryraluxl_x3bDo0Jx6w58b7ZJt2&callback=loadMap" async defer>
+            </script>
+            <a href="https://bingmapsgenerator.github.io" style="display:none;">bing map generator</a>
+            <br/>
+            <br/>
+             
+    </body>
+</html>
